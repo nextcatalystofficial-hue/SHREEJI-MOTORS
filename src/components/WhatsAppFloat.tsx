@@ -27,9 +27,10 @@ export default function WhatsAppFloat() {
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 10, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="hidden sm:block bg-[#161616] text-white text-xs font-medium py-1.5 px-3 rounded-lg border border-white/10 shadow-xl whitespace-nowrap pointer-events-none"
+            className="hidden sm:flex items-center gap-2 bg-white text-neutral-950 text-xs font-bold py-2 px-3.5 rounded-lg border border-[#E8DFCE] shadow-xl whitespace-nowrap pointer-events-none"
           >
-            Chat with Shreeji Motors
+            <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+            <span>Chat with Shreeji Motors</span>
           </motion.div>
         )}
       </AnimatePresence>
@@ -43,12 +44,12 @@ export default function WhatsAppFloat() {
         onMouseLeave={() => setIsHovered(false)}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, type: 'spring', stiffness: 260, damping: 20 }}
+        transition={{ delay: 0.8, type: 'spring', stiffness: 260, damping: 20 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-neutral-950 flex items-center justify-center shadow-2xl shadow-emerald-500/25 border border-emerald-300/30 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+        className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/25 border-2 border-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
       >
-        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-neutral-950 text-emerald-500" />
+        <MessageCircle className="w-6 h-6 sm:w-7 sm:h-7 fill-white text-emerald-500" />
       </motion.a>
     </div>
   );

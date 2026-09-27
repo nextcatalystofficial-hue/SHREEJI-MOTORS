@@ -18,10 +18,10 @@ export default function CarCard({ car, onSelect }: CarCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="group glass-card rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 relative"
+      className="group bg-white border border-[#E8DFCE] hover:border-[#D4AF37] rounded-2xl overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300 relative shadow-[0_4px_20px_-2px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_-8px_rgba(212,175,55,0.2)]"
     >
       {/* Top Image Container */}
-      <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-neutral-900">
+      <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-stone-50">
         {!imageError ? (
           <img
             src={car.image}
@@ -32,28 +32,27 @@ export default function CarCard({ car, onSelect }: CarCardProps) {
             loading="lazy"
           />
         ) : (
-          /* Zero-broken-image fallback container */
-          <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-neutral-900 to-neutral-950 p-6 text-center">
-            <span className="text-xs uppercase tracking-widest text-[#E5B842] font-semibold mb-1">
+          <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 p-6 text-center">
+            <span className="text-xs uppercase tracking-widest text-[#A07818] font-bold mb-1">
               {car.brand}
             </span>
-            <span className="text-lg font-bold text-white">{car.model}</span>
+            <span className="text-lg font-bold text-neutral-950">{car.model}</span>
           </div>
         )}
 
-        {/* Image overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent opacity-80" />
+        {/* Subtle bottom gradient scrim */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-60" />
 
-        {/* Status / Availability subtle text marker */}
+        {/* Status / Availability text marker */}
         <div className="absolute top-3.5 left-3.5">
-          <span className="text-[11px] font-semibold tracking-wider uppercase text-emerald-400/90 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded border border-emerald-500/20">
+          <span className="text-[11px] font-bold tracking-wider uppercase text-emerald-800 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded shadow-xs border border-emerald-500/30">
             {car.status}
           </span>
         </div>
 
         {/* Location tag */}
         <div className="absolute top-3.5 right-3.5">
-          <span className="text-[11px] font-medium text-neutral-300 bg-black/60 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">
+          <span className="text-[11px] font-semibold text-stone-700 bg-white/95 backdrop-blur-md px-2.5 py-0.5 rounded shadow-xs border border-[#E8DFCE]">
             {car.location}
           </span>
         </div>
@@ -63,54 +62,54 @@ export default function CarCard({ car, onSelect }: CarCardProps) {
       <div className="p-5 sm:p-6 flex flex-col flex-1 justify-between gap-4">
         <div>
           {/* Brand & Model */}
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#E5B842] mb-1">
+          <div className="text-xs font-bold tracking-wider uppercase text-[#A07818] mb-1">
             {car.brand}
           </div>
-          <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-neutral-100 transition-colors">
+          <h3 className="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#A07818] transition-colors font-display">
             {car.model}{' '}
-            <span className="text-xs font-normal text-neutral-400">
+            <span className="text-xs font-normal text-stone-500">
               {car.variant}
             </span>
           </h3>
 
-          {/* Unboxed Metadata with Typographic Separator (Zero-Pill Discipline) */}
-          <div className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs text-neutral-400 mt-3 pt-3 border-t border-white/[0.06]">
-            <span className="inline-flex items-center gap-1 text-neutral-300">
-              <Calendar className="w-3.5 h-3.5 text-neutral-500" />
+          {/* Unboxed Metadata with Typographic Separator */}
+          <div className="flex flex-wrap items-center gap-y-1 gap-x-2 text-xs text-stone-600 mt-3 pt-3 border-t border-stone-100">
+            <span className="inline-flex items-center gap-1 font-medium text-stone-800">
+              <Calendar className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>{car.year}</span>
             </span>
-            <span className="text-neutral-600" aria-hidden="true">·</span>
-            <span className="inline-flex items-center gap-1 text-neutral-300">
-              <Fuel className="w-3.5 h-3.5 text-neutral-500" />
+            <span className="text-stone-300" aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1 font-medium text-stone-800">
+              <Fuel className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>{car.fuel}</span>
             </span>
-            <span className="text-neutral-600" aria-hidden="true">·</span>
-            <span className="inline-flex items-center gap-1 text-neutral-300">
-              <Cog className="w-3.5 h-3.5 text-neutral-500" />
+            <span className="text-stone-300" aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1 font-medium text-stone-800">
+              <Cog className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>{car.transmission}</span>
             </span>
-            <span className="text-neutral-600" aria-hidden="true">·</span>
-            <span className="inline-flex items-center gap-1 text-neutral-300">
-              <Gauge className="w-3.5 h-3.5 text-neutral-500" />
+            <span className="text-stone-300" aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1 font-medium text-stone-800">
+              <Gauge className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span className="tabular-numbers">{car.mileageKm.toLocaleString('en-IN')} km</span>
             </span>
           </div>
         </div>
 
         {/* Footer: Price & View Details Action */}
-        <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+        <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
           <div>
-            <div className="text-[10px] uppercase tracking-wider text-neutral-500">
+            <div className="text-[10px] uppercase tracking-wider text-stone-400 font-semibold">
               Estimated Price
             </div>
-            <div className="text-lg sm:text-xl font-bold text-white tabular-numbers font-display text-gradient">
+            <div className="text-lg sm:text-xl font-extrabold text-neutral-950 tabular-numbers font-display">
               {car.formattedPrice}
             </div>
           </div>
 
           <button
             onClick={() => onSelect(car)}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-white group-hover:text-[#E5B842] bg-white/[0.04] group-hover:bg-white/[0.08] border border-white/[0.1] group-hover:border-[#E5B842]/40 rounded transition-all duration-200"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold uppercase tracking-wider text-neutral-900 group-hover:text-neutral-950 bg-[#FAF8F5] group-hover:bg-gradient-to-r group-hover:from-[#D4AF37] group-hover:to-[#E5C158] border border-[#E8DFCE] group-hover:border-[#F3E5AB] rounded shadow-2xs transition-all duration-200 cursor-pointer"
           >
             <span>View Details</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

@@ -36,28 +36,30 @@ export default function StatsStrip() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="glass-panel rounded-xl shadow-2xl shadow-black/80 divide-y divide-white/[0.06] md:divide-y-0 md:divide-x grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        className="bg-white rounded-2xl border border-[#E8DFCE] shadow-[0_16px_40px_-10px_rgba(212,175,55,0.15)] divide-y divide-[#E8DFCE] md:divide-y-0 md:divide-x md:divide-[#E8DFCE] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden"
       >
         {pillars.map((pillar, idx) => {
           const Icon = pillar.icon;
           return (
             <div
               key={idx}
-              className="p-6 md:p-7 flex flex-col justify-between hover:bg-white/[0.02] transition-colors duration-200"
+              className="p-6 md:p-7 flex flex-col justify-between hover:bg-[#FAF9F5] transition-colors duration-200 group"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="text-[11px] font-mono text-neutral-400">0{idx + 1}</span>
-                <Icon className="w-5 h-5 text-[#E5B842]/70" />
+                <span className="text-xs font-mono font-bold text-[#D4AF37]">0{idx + 1}</span>
+                <div className="w-8 h-8 rounded-lg bg-[#FAF8F5] border border-[#E8DFCE] group-hover:border-[#D4AF37] flex items-center justify-center text-[#D4AF37] shadow-2xs transition-colors">
+                  <Icon className="w-4 h-4" />
+                </div>
               </div>
 
               <div>
-                <h2 className="text-sm font-bold tracking-wider text-white font-display uppercase">
+                <h2 className="text-sm font-bold tracking-wider text-neutral-950 font-display uppercase">
                   {pillar.title}
                 </h2>
-                <div className="text-xs font-semibold tracking-wider text-[#E5B842] uppercase mt-0.5">
+                <div className="text-xs font-bold tracking-wider text-[#A07818] uppercase mt-0.5">
                   {pillar.subtitle}
                 </div>
-                <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
+                <p className="text-xs text-stone-600 mt-2 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>

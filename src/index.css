@@ -2,17 +2,22 @@
 
 @layer base {
   :root {
-    --color-bg-primary: #080808;
-    --color-bg-secondary: #111111;
-    --color-bg-card: #151515;
-    --color-gold-accent: #E5B842;
-    --color-gold-muted: #C9A227;
+    --color-bg-primary: #FFFFFF;
+    --color-bg-secondary: #FAFAF8;
+    --color-bg-card: #FFFFFF;
+    --color-gold-accent: #D4AF37;
+    --color-gold-deep: #A07818;
+    --color-gold-light: #F7E7B4;
+    --color-gold-border: #E8DFCE;
+    --color-text-primary: #111111;
+    --color-text-secondary: #4A4A4A;
+    --color-text-muted: #737373;
   }
 
   body {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: var(--color-bg-primary);
-    color: #F3F4F6;
+    background-color: #FFFFFF;
+    color: #111111;
     overflow-x: hidden;
   }
 
@@ -22,44 +27,60 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar in crisp white and warm metallic gold */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #FDFBF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 3px;
+  background: #E2DACB;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
+  background: #D4AF37;
 }
 
-/* Glass panel utility */
+/* Luxury White & Gold Glass Panels */
 .glass-panel {
-  background: rgba(17, 17, 17, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 }
 
 .glass-card {
-  background: #141414;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #FFFFFF;
+  border: 1px solid #E8DFCE;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: rgba(229, 184, 66, 0.35);
-  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 0 20px -4px rgba(229, 184, 66, 0.08);
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 16px 36px -12px rgba(212, 175, 55, 0.2), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
 }
 
-/* Subtle gold glow */
-.gold-glow {
-  text-shadow: 0 0 25px rgba(229, 184, 66, 0.25);
+/* Golden text and gradient utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 45%, #AA7A1E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C158 50%, #C59B27 100%);
+}
+
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.gold-border-subtle {
+  border: 1px solid #E8DFCE;
 }
 
 /* Tabular figures for prices and numbers */
@@ -76,3 +97,4 @@
     scroll-behavior: auto !important;
   }
 }
+

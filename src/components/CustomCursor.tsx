@@ -53,7 +53,7 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-40 overflow-hidden" aria-hidden="true">
       {/* Center dot */}
       <div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#E5B842] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-[#D4AF37] -translate-x-1/2 -translate-y-1/2 transition-opacity duration-150"
         style={{
           transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
           opacity: isVisible ? 1 : 0
@@ -61,9 +61,9 @@ export default function CustomCursor() {
       />
       {/* Outer ring */}
       <div
-        className={`fixed top-0 left-0 rounded-full border border-[#E5B842]/40 -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ease-out ${
+        className={`fixed top-0 left-0 rounded-full border border-[#D4AF37]/40 -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ease-out ${
           isPointer
-            ? 'w-10 h-10 border-[#E5B842]/80 bg-[#E5B842]/10 scale-110'
+            ? 'w-10 h-10 border-[#D4AF37] bg-[#D4AF37]/15 scale-110'
             : 'w-6 h-6 scale-100 opacity-60'
         }`}
         style={{
