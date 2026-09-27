@@ -1,0 +1,6 @@
+{
+  "name": "Shreeji Motors Ranchi | Premium Pre-Owned Cars",
+  "description": "Explore premium pre-owned cars at Shreeji Motors, Ratu Road, Ranchi. Discover a multi-brand collection and connect with our team to find your next car.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
